@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomTableViewCell.h"
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController <UITableViewDelegate, UITableViewDelegate>
+
+@property(nonatomic, weak) IBOutlet UITextField *searchText;
+@property(nonatomic, weak) IBOutlet UIButton *btnSearch;
+@property(nonatomic, weak) IBOutlet UITableView *tableView;
 
 @end

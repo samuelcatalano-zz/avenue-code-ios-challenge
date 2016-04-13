@@ -8,6 +8,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
+                <outlet property="btnSearch" destination="S3f-jz-gpG" id="FRJ-JY-5iy"/>
+                <outlet property="searchText" destination="PnL-eq-2ke" id="xIx-PQ-f0Y"/>
+                <outlet property="tableView" destination="oHv-CU-Osy" id="I0n-Wm-ehP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,15 +29,6 @@
                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ex. usa" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PnL-eq-2ke">
-                    <rect key="frame" x="8" y="63" width="234" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="rE7-C9-tZ1"/>
-                        <constraint firstAttribute="width" constant="234" id="tQt-Tf-Nvk"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3f-jz-gpG">
                     <rect key="frame" x="256" y="63" width="75" height="30"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -45,18 +39,50 @@
                     <state key="normal" title="Search">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="btnClicked:" destination="-1" eventType="touchUpInside" id="5Vq-xj-OTL"/>
+                    </connections>
                 </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ex. usa" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PnL-eq-2ke">
+                    <rect key="frame" x="8" y="63" width="234" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="rE7-C9-tZ1"/>
+                        <constraint firstAttribute="width" constant="234" id="tQt-Tf-Nvk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="FEq-Yv-aqr">
+                    <rect key="frame" x="291" y="270" width="20" height="20"/>
+                </activityIndicatorView>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oHv-CU-Osy">
+                    <rect key="frame" x="8" y="118" width="584" height="474"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="lac-l9-nge"/>
+                        <outlet property="delegate" destination="-1" id="Iu8-gi-opP"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="oHv-CU-Osy" firstAttribute="top" secondItem="S3f-jz-gpG" secondAttribute="bottom" constant="25" id="2we-EJ-V8V"/>
                 <constraint firstItem="S3f-jz-gpG" firstAttribute="top" secondItem="PnL-eq-2ke" secondAttribute="top" id="EmN-sZ-UnA"/>
                 <constraint firstItem="KF0-5r-ux5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="FX7-Lq-yLV"/>
                 <constraint firstItem="KF0-5r-ux5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="34" id="Jou-uE-Rao"/>
                 <constraint firstItem="PnL-eq-2ke" firstAttribute="leading" secondItem="KF0-5r-ux5" secondAttribute="leading" id="Sxt-8b-cbc"/>
                 <constraint firstItem="S3f-jz-gpG" firstAttribute="leading" secondItem="PnL-eq-2ke" secondAttribute="trailing" constant="14" id="UgR-6D-g4u"/>
+                <constraint firstItem="oHv-CU-Osy" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="XY7-c9-gjR"/>
                 <constraint firstItem="PnL-eq-2ke" firstAttribute="top" secondItem="KF0-5r-ux5" secondAttribute="bottom" constant="8" symbolic="YES" id="cUj-oZ-MjR"/>
+                <constraint firstItem="oHv-CU-Osy" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" id="iCl-ZM-Lgg"/>
+                <constraint firstItem="oHv-CU-Osy" firstAttribute="leading" secondItem="PnL-eq-2ke" secondAttribute="leading" id="lHN-K0-TJf"/>
                 <constraint firstItem="S3f-jz-gpG" firstAttribute="bottom" secondItem="PnL-eq-2ke" secondAttribute="bottom" id="pOb-s8-XOj"/>
             </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="FEq-Yv-aqr"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

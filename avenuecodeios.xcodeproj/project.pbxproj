@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D5B7AB71CBE0A0000046503 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B7AB51CBE0A0000046503 /* MainViewController.m */; };
 		0D5B7AB81CBE0A0000046503 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5B7AB61CBE0A0000046503 /* MainViewController.xib */; };
+		0D5B7AC31CBEE29C00046503 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B7AC11CBEE29C00046503 /* CustomTableViewCell.m */; };
+		0D5B7AC41CBEE29C00046503 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5B7AC21CBEE29C00046503 /* CustomTableViewCell.xib */; };
 		0D797B4A1CBDB107001127A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D797B491CBDB107001127A3 /* main.m */; };
 		0D797B4D1CBDB107001127A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D797B4C1CBDB107001127A3 /* AppDelegate.m */; };
 		0D797B551CBDB108001127A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D797B541CBDB108001127A3 /* Assets.xcassets */; };
@@ -38,6 +40,10 @@
 		0D5B7AB41CBE0A0000046503 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		0D5B7AB51CBE0A0000046503 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		0D5B7AB61CBE0A0000046503 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		0D5B7AC01CBEE29C00046503 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		0D5B7AC11CBEE29C00046503 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		0D5B7AC21CBEE29C00046503 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		0D5B7AC51CBF004C00046503 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		0D797B451CBDB107001127A3 /* avenuecodeios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = avenuecodeios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D797B491CBDB107001127A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0D797B4B1CBDB107001127A3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -89,6 +95,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		0D5B7ABF1CBEE25B00046503 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				0D5B7AC01CBEE29C00046503 /* CustomTableViewCell.h */,
+				0D5B7AC11CBEE29C00046503 /* CustomTableViewCell.m */,
+				0D5B7AC21CBEE29C00046503 /* CustomTableViewCell.xib */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
 		0D797B3C1CBDB107001127A3 = {
 			isa = PBXGroup;
 			children = (
@@ -118,10 +134,11 @@
 				0D797B4C1CBDB107001127A3 /* AppDelegate.m */,
 				0D797B541CBDB108001127A3 /* Assets.xcassets */,
 				0D797B591CBDB108001127A3 /* Info.plist */,
-				0D797B481CBDB107001127A3 /* Supporting Files */,
 				0D5B7AB41CBE0A0000046503 /* MainViewController.h */,
 				0D5B7AB51CBE0A0000046503 /* MainViewController.m */,
 				0D5B7AB61CBE0A0000046503 /* MainViewController.xib */,
+				0D5B7ABF1CBEE25B00046503 /* TableView */,
+				0D797B481CBDB107001127A3 /* Supporting Files */,
 			);
 			path = avenuecodeios;
 			sourceTree = "<group>";
@@ -130,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				0D797B491CBDB107001127A3 /* main.m */,
+				0D5B7AC51CBF004C00046503 /* Constants.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -269,6 +287,7 @@
 			files = (
 				0D797B551CBDB108001127A3 /* Assets.xcassets in Resources */,
 				0D5B7AB81CBE0A0000046503 /* MainViewController.xib in Resources */,
+				0D5B7AC41CBEE29C00046503 /* CustomTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +362,7 @@
 			files = (
 				0D797B4D1CBDB107001127A3 /* AppDelegate.m in Sources */,
 				0D5B7AB71CBE0A0000046503 /* MainViewController.m in Sources */,
+				0D5B7AC31CBEE29C00046503 /* CustomTableViewCell.m in Sources */,
 				0D797B4A1CBDB107001127A3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
