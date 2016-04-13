@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "809A23A918FC7D2F95749C7B9B9506CEE72CEC5D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "809A23A918FC7D2F95749C7B9B9506CEE72CEC5D" : 0,
+    "325315EDEF0B24CA7DACBA03BAA04AE9C847B553" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4CEEDEBC-D009-4B2B-86EB-C6F3E7781D3F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "809A23A918FC7D2F95749C7B9B9506CEE72CEC5D" : "avenuecodeios\/",
+    "325315EDEF0B24CA7DACBA03BAA04AE9C847B553" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "avenuecodeios",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "avenuecodeios.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/samuelcatalano\/pulselive.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "325315EDEF0B24CA7DACBA03BAA04AE9C847B553"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:samuelcatalano\/avenuecodeios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "809A23A918FC7D2F95749C7B9B9506CEE72CEC5D"
+    }
+  ]
+}
