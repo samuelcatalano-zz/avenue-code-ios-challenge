@@ -19,9 +19,13 @@
 
 @implementation MainViewController
 
+NSArray *itemsArray;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,14 +36,16 @@
 #pragma mark - UITableview Delegate and Datasource methods
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-        //    NSDictionary *dictionary = _arraysDic[section];
-        //    NSArray *array = dictionary[@"koupons"];
-        //    return [array count];
-    return 10;
+
+    if (itemsArray != nil) {
+        return [[itemsArray objectAtIndex:0] count];
+    }
+    else {
+        return 0;
+    }
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-        //    return [_arraysDic count];
     return 1;
 }
 
@@ -52,12 +58,14 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomTableViewCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
+    
+    if (itemsArray != nil) {
+        NSArray *data = [itemsArray objectAtIndex:0];
+        NSDictionary *dictionary = [data objectAtIndex:indexPath.row];
+        cell.itemDescriptionLabel.text = [dictionary objectForKey:@"lf"];
+    }
 
     return cell;
-}
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
 }
 
 - (IBAction)btnClicked:(id)sender {
@@ -79,21 +87,48 @@
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         if (error) {
             NSLog(@"Error: %@", error);
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Attention!"
+                                                                           message:@"This acronym/initialism does not exist"
+                                                                           delegate:self
+                                                                           cancelButtonTitle:@"OK"
+                                                                           otherButtonTitles:nil];
+            
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [alert show];
+            
+            // If you're not using ARC, you will need to release the alert view.
+            // [alert release];
         } else {
-            NSLog(@"%@",response);
             if (response) {
                 NSError *error1;
                 innerJson = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error1];
             }
             
-            NSMutableArray *itemsArray = [[NSMutableArray alloc] init];
-            itemsArray = [innerJson valueForKey:@"lfs"];
-            
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            
+            if (innerJson.count == 0) {
+                NSLog(@"Error: %@", error);
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Attention!"
+                                                                               message:@"This acronym/initialism does not exist"
+                                                                               delegate:self
+                                                                               cancelButtonTitle:@"OK"
+                                                                               otherButtonTitles:nil];
+                
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                [alert show];
+                return;
+            }
+            else {
+                itemsArray = [[NSMutableArray alloc] init];
+                itemsArray = [innerJson valueForKey:@"lfs"];
+                
+                [_tableView reloadData];
+                [_tableView setHidden:FALSE];
+                
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            }
         }
     }];
     [dataTask resume];
+    
 }
 
 @end

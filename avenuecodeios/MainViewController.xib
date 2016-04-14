@@ -55,8 +55,8 @@
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="FEq-Yv-aqr">
                     <rect key="frame" x="291" y="270" width="20" height="20"/>
                 </activityIndicatorView>
-                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oHv-CU-Osy">
-                    <rect key="frame" x="8" y="118" width="584" height="474"/>
+                <tableView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oHv-CU-Osy">
+                    <rect key="frame" x="8" y="113" width="584" height="474"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="lac-l9-nge"/>
@@ -66,7 +66,7 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="oHv-CU-Osy" firstAttribute="top" secondItem="S3f-jz-gpG" secondAttribute="bottom" constant="25" id="2we-EJ-V8V"/>
+                <constraint firstItem="oHv-CU-Osy" firstAttribute="top" secondItem="S3f-jz-gpG" secondAttribute="bottom" constant="20" id="2we-EJ-V8V"/>
                 <constraint firstItem="S3f-jz-gpG" firstAttribute="top" secondItem="PnL-eq-2ke" secondAttribute="top" id="EmN-sZ-UnA"/>
                 <constraint firstItem="KF0-5r-ux5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="FX7-Lq-yLV"/>
                 <constraint firstItem="KF0-5r-ux5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="34" id="Jou-uE-Rao"/>
@@ -74,7 +74,7 @@
                 <constraint firstItem="S3f-jz-gpG" firstAttribute="leading" secondItem="PnL-eq-2ke" secondAttribute="trailing" constant="14" id="UgR-6D-g4u"/>
                 <constraint firstItem="oHv-CU-Osy" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="XY7-c9-gjR"/>
                 <constraint firstItem="PnL-eq-2ke" firstAttribute="top" secondItem="KF0-5r-ux5" secondAttribute="bottom" constant="8" symbolic="YES" id="cUj-oZ-MjR"/>
-                <constraint firstItem="oHv-CU-Osy" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" id="iCl-ZM-Lgg"/>
+                <constraint firstItem="oHv-CU-Osy" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" constant="-5" id="iCl-ZM-Lgg"/>
                 <constraint firstItem="oHv-CU-Osy" firstAttribute="leading" secondItem="PnL-eq-2ke" secondAttribute="leading" id="lHN-K0-TJf"/>
                 <constraint firstItem="S3f-jz-gpG" firstAttribute="bottom" secondItem="PnL-eq-2ke" secondAttribute="bottom" id="pOb-s8-XOj"/>
             </constraints>
